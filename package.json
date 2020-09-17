@@ -22,7 +22,8 @@
   },
   "scripts": {
     "build": "rm -rf dist && rollup -c && echo '{\"type\":\"commonjs\"}' > dist/cjs/package.json && rm -rf types && tsc -d --declarationDir types --declarationMap --emitDeclarationOnly",
-    "test": "TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register --colors --reporter spec --recursive test/**/*.ts"
+    "lint": "eslint .",
+    "test": "npm run lint && TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register --colors --reporter spec --recursive test/**/*.ts"
   },
   "author": "",
   "license": "MIT",
