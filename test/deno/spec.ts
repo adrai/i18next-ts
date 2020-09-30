@@ -1,5 +1,8 @@
+// @ts-ignore
 import { assertStringContains } from 'https://deno.land/std/testing/asserts.ts'
-import i18next from '../../dist/deno/index.ts'
+// @ts-ignore
+import i18next from '../../index.ts'
+// @ts-ignore
 const { test } = Deno
 
 test('request', async () => {
