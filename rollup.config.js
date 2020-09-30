@@ -6,15 +6,15 @@ export default {
   input: 'src/index.ts', // our source file
   output: [
     {
-      // dir: 'dist/cjs',
-      // preserveModules: true,
-      file: pkg.main,
+      dir: 'dist/cjs',
+      preserveModules: true,
+      // file: pkg.main,
       format: 'cjs'
     },
     {
-      // dir: 'dist/esm',
-      // preserveModules: true,
-      file: pkg.module,
+      dir: 'dist/esm',
+      preserveModules: true,
+      // file: pkg.module,
       format: 'es' // the preferred format
     },
     {

@@ -21,9 +21,11 @@
     }
   },
   "scripts": {
-    "build": "rm -rf dist && rollup -c && echo '{\"type\":\"commonjs\"}' > dist/cjs/package.json && rm -rf types && tsc -d --declarationDir types --declarationMap --emitDeclarationOnly",
+    "build:deno": "cp -r src dist/deno && node scripts/add-ts-extension.js dist/deno && echo '# i18next: learn once - translate everywhere\n## visit ➡️ [i18next.com](https://www.i18next.com)' > dist/deno/README.md",
+    "build": "rm -rf dist && rollup -c && echo '{\"type\":\"commonjs\"}' > dist/cjs/package.json && rm -rf types && tsc -d --declarationDir types --declarationMap --emitDeclarationOnly && npm run build:deno",
     "lint": "eslint .",
-    "test": "npm run lint && TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register --colors --reporter spec --recursive test/**/*.ts"
+    "test:deno": "deno test test/deno/*.ts",
+    "test": "npm run lint && TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register --colors --reporter spec --recursive test/*.ts"
   },
   "author": "",
   "license": "MIT",
