@@ -1,1 +1,15 @@
-var i18next=function(){"use strict";return new(function(){function t(){}return t.prototype.init=function(t){console.log("inited",t)},t.prototype.t=function(t,n){return"whould have translated "+t},t}())}();
+var i18next=function(){"use strict";
+/*! *****************************************************************************
+    Copyright (c) Microsoft Corporation.
+
+    Permission to use, copy, modify, and/or distribute this software for any
+    purpose with or without fee is hereby granted.
+
+    THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+    REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+    AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+    INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+    LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+    OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+    PERFORMANCE OF THIS SOFTWARE.
+    ***************************************************************************** */var t=function(){return(t=Object.assign||function(t){for(var n,o=1,e=arguments.length;o<e;o++)for(var r in n=arguments[o])Object.prototype.hasOwnProperty.call(n,r)&&(t[r]=n[r]);return t}).apply(this,arguments)};function n(t,n,o,e){return new(o||(o=Promise))((function(r,i){function u(t){try{s(e.next(t))}catch(t){i(t)}}function a(t){try{s(e.throw(t))}catch(t){i(t)}}function s(t){var n;t.done?r(t.value):(n=t.value,n instanceof o?n:new o((function(t){t(n)}))).then(u,a)}s((e=e.apply(t,n||[])).next())}))}function o(t,n){var o,e,r,i,u={label:0,sent:function(){if(1&r[0])throw r[1];return r[1]},trys:[],ops:[]};return i={next:a(0),throw:a(1),return:a(2)},"function"==typeof Symbol&&(i[Symbol.iterator]=function(){return this}),i;function a(i){return function(a){return function(i){if(o)throw new TypeError("Generator is already executing.");for(;u;)try{if(o=1,e&&(r=2&i[0]?e.return:i[0]?e.throw||((r=e.return)&&r.call(e),0):e.next)&&!(r=r.call(e,i[1])).done)return r;switch(e=0,r&&(i=[2&i[0],r.value]),i[0]){case 0:case 1:r=i;break;case 4:return u.label++,{value:i[1],done:!1};case 5:u.label++,e=i[1],i=[0];continue;case 7:i=u.ops.pop(),u.trys.pop();continue;default:if(!(r=u.trys,(r=r.length>0&&r[r.length-1])||6!==i[0]&&2!==i[0])){u=0;continue}if(3===i[0]&&(!r||i[1]>r[0]&&i[1]<r[3])){u.label=i[1];break}if(6===i[0]&&u.label<r[1]){u.label=r[1],r=i;break}if(r&&u.label<r[2]){u.label=r[2],u.ops.push(i);break}r[2]&&u.ops.pop(),u.trys.pop();continue}i=n.call(t,u)}catch(t){i=[6,t],e=0}finally{o=r=0}if(5&i[0])throw i[1];return{value:i[0]?i[1]:void 0,done:!0}}([i,a])}}}var e=function(){function e(t){void 0===t&&(t={}),this.options=t,this.onExtendOptionsHooks=[]}return e.prototype.onExtendOptions=function(t){return this.onExtendOptionsHooks.push(t),this},e.prototype.init=function(){return n(this,void 0,void 0,(function(){var n=this;return o(this,(function(o){switch(o.label){case 0:return[4,Promise.all(this.onExtendOptionsHooks.map((function(o){var e=o(t({},n.options)),r=e;return r||Promise.resolve(e)})))];case 1:return o.sent().forEach((function(o){n.options=t(t({},o),n.options)})),console.log("inited",this.options),[2,this]}}))}))},e.prototype.t=function(t,n){return"whould have translated "+t},e}();return function(t){return new e(t)}}();

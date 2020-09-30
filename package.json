@@ -21,10 +21,10 @@
     }
   },
   "scripts": {
-    "build:deno": "cp -r src dist/deno && node scripts/add-ts-extension.js dist/deno",
+    "build:deno": "rm -rf dist/deno && cp -r src dist/deno && node scripts/add-ts-extension.js dist/deno",
     "build": "rm -rf dist && rollup -c && echo '{\"type\":\"commonjs\"}' > dist/cjs/package.json && rm -rf types && tsc -d --declarationDir types --declarationMap --emitDeclarationOnly && npm run build:deno",
     "lint": "eslint .",
-    "test:deno": "deno test test/deno/*.ts",
+    "test:deno": "npm run build:deno && deno test test/deno/*.ts --reload",
     "test": "npm run lint && TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register --colors --reporter spec --recursive test/*.ts"
   },
   "author": "",
